@@ -22,6 +22,21 @@
 <body>
 <div id="map"></div>
 <script>
+    const WebSocket = require('ws');
+    const socket = new WebSocket("wss://stream.aisstream.io/v0/stream")
+
+    socket.onopen = function (_) {
+        let subscriptionMessage = {
+            Apikey: "<YOUR API KEY>",
+            BoundingBoxes: [[[-90, -180], [90, 180]]]
+        }
+        socket.send(JSON.stringify(subscriptionMessage));
+    };
+
+    socket.onmessage = function (event) {
+        let aisMessage = JSON.parse(event.data)
+        console.log(aisMessage)
+    };
 
 
 
