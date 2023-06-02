@@ -22,23 +22,21 @@
 <body>
 <div id="map"></div>
 <script>
-    const WebSocket = require('ws');
-    const socket = new WebSocket("wss://stream.aisstream.io/v0/stream")
+<!--    const WebSocket = require('ws');-->
+<!--    const socket = new WebSocket("wss://stream.aisstream.io/v0/stream")-->
 
-    socket.onopen = function (_) {
-        let subscriptionMessage = {
-            Apikey: "<YOUR API KEY>",
-            BoundingBoxes: [[[-90, -180], [90, 180]]]
-        }
-        socket.send(JSON.stringify(subscriptionMessage));
-    };
+<!--    socket.onopen = function (_) {-->
+<!--        let subscriptionMessage = {-->
+<!--            Apikey: "e12a8cd1c298aebf527954efc978058b5b21a5be",-->
+<!--            BoundingBoxes: [[[-90, -180], [90, 180]]]-->
+<!--        }-->
+<!--        socket.send(JSON.stringify(subscriptionMessage));-->
+<!--    };-->
 
-    socket.onmessage = function (event) {
-        let aisMessage = JSON.parse(event.data)
-        console.log(aisMessage)
-    };
-
-
+<!--    socket.onmessage = function (event) {-->
+<!--        let aisMessage = JSON.parse(event.data)-->
+<!--        console.log(aisMessage)-->
+<!--    };-->
 
 
     var map = L.map('map', {
